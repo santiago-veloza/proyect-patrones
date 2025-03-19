@@ -1,0 +1,30 @@
+# Crear entorno virtual
+python -m venv venv
+venv\Scripts\Activate
+
+# Instalar Django
+pip install django
+
+# Crear proyecto y app
+django-admin startproject mi_proyecto
+cd mi_proyecto
+python manage.py startapp miapp
+
+# Crear carpetas de templates y static
+mkdir miapp\templates\miapp
+mkdir miapp\static\miapp
+
+# Crear archivos
+New-Item miapp\templates\miapp\index.html
+New-Item miapp\static\miapp\style.css
+
+
+
+# Ejecutar el servidor
+python manage.py runserver
+
+# Guardar dependencias
+pip freeze > requirements.txt
+
+# Instalar dependencias en otro entorno
+pip install -r requirements.txt
